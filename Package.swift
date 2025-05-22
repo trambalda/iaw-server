@@ -6,7 +6,7 @@ import PackageDescription
 let package = Package(
     name: "iaw-server",
     dependencies: [
-        .package(url: "https://github.com/httpswift/swifter.git", from: "1.5.0")
+        .package(url: "https://github.com/httpswift/swifter.git", from: "1.5.0"),
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
@@ -14,7 +14,7 @@ let package = Package(
         .executableTarget(
             name: "iaw-server",
             dependencies: [
-                .product(name: "Swifter", package: "swifter")
+                .product(name: "Swifter", package: "swifter"),
             ]
         ),
     ]

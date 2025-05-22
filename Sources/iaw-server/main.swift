@@ -3,6 +3,9 @@ import Swifter
 
 let server = HttpServer()
 
+AuthRoute.setup(with: server)
+PincodeRoute.setup(with: server)
+RegisterRoute.setup(with: server)
 RestaurantsRoute.setup(with: server)
 
 do {

@@ -27,23 +27,7 @@ struct RestaurantsRoute {
                 result = restaurants
             }
             
-            do {
-                let encoder = JSONEncoder()
-                encoder.outputFormatting = [.prettyPrinted, .sortedKeys]
-                let jsonData = try encoder.encode(
-                    ResultWrapper(data: result)
-                )
-                return .raw(
-                    200,
-                    "OK",
-                    ["Content-Type": "application/json; charset=utf-8"],
-                    { writer in
-                        try writer.write(jsonData)
-                    }
-                )
-            } catch {
-                return .internalServerError
-            }
+            return response(result)
         }
     }
 }
